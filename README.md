@@ -1,77 +1,26 @@
 ## High-Performance Audio Editor
 
-A modern, high-performance audio editor focused on fast waveform rendering and low-latency editing.
+This project implements the backend of a high-performance audio editor in C, focusing on efficient memory management and scalable manipulation of audio data. The system supports core track operations such as insertions, deletions, and segment edits while maintaining performance and minimizing memory overhead.
 
-### Features (Planned)
+At the core of the design is a custom data structure built using linked lists and low-level heap allocation. This structure enables reuse of audio segments across tracks without duplication, significantly reducing memory usage and improving efficiency when working with large audio files.
 
-- **High-performance core**: Efficient handling of large audio files.
-- **Waveform visualization**: Smooth zooming, scrolling, and scrubbing.
-- **Non-destructive editing**: Cuts, fades, and effects without altering original audio.
-- **Cross-platform**: Targeting macOS first, with potential expansion.
+Key features include:
 
-### Project Structure
+- Efficient handling of audio samples through custom memory-managed data structures.
+- Support for dynamic track operations (insert, delete, split, merge).
+- Reuse of audio segments to avoid redundant data storage.
+- Modular design enabling integration with higher-level audio processing tools.
 
-- **`src/`**: Source code (DSP, UI, utilities).
-- **`tests/`**: Automated tests.
-- **`assets/`**: Sample audio, images, and other static assets.
-- **`scripts/`**: Build and tooling scripts.
-
-(If some of these directories do not exist yet, they are placeholders for future organization.)
+This project emphasizes systems-level programming, memory optimization, and data structure design, showcasing how low-level C can be used to build performant and scalable applications.
 
 ### Getting Started
 
 1. **Clone the repository**
 
-   ```bash
-   git clone <your-repo-url>.git
+   git clone https://github.com/Juan-David-Lopez-Arce/high-performance-audio-editor.git
    cd high-performance-audio-editor
-   ```
+   
 
-2. **Install dependencies**
+2. **Compile**
 
-   If this is a Node/TypeScript app:
-
-   ```bash
-   npm install
-   # or
-   pnpm install
-   # or
-   yarn
-   ```
-
-   If this is a native app (Rust/C++/Swift), add the appropriate toolchain instructions here.
-
-3. **Run in development mode**
-
-   ```bash
-   npm run dev
-   ```
-
-   (Update this section to match the actual dev command once the tooling is set up.)
-
-### Building
-
-Document the build steps here once the build pipeline is defined, for example:
-
-```bash
-npm run build
-```
-
-### Testing
-
-```bash
-npm test
-```
-
-Add more detailed testing instructions (e.g., end-to-end tests, performance benchmarks) as the project matures.
-
-### Contribution Guidelines
-
-- **Branching**: Use feature branches for changes.
-- **Commits**: Write clear, descriptive commit messages.
-- **Code style**: Keep code formatted and linted (e.g., via `prettier`, `eslint`, or equivalent tools).
-- **PRs**: Prefer small, focused pull requests with clear descriptions and test coverage.
-
-### License
-
-Add your chosen license here (e.g., MIT, Apache 2.0).
+   make sound_seg.o
