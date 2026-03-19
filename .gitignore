@@ -1,0 +1,19 @@
+# Object files
+*.o
+
+# Executables (in case you add a main later)
+*.out
+*.exe
+a.out
+
+# Debug / build artifacts
+*.dSYM/
+*.log
+
+# macOS files
+.DS_Store
+
+# Editor / IDE files
+.vscode/
+.idea/
+*.swp
