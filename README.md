@@ -34,10 +34,23 @@ This project demonstrates how careful memory management and data structure desig
 - cd high-performance-audio-editor
 
 ### 2. Compile
-   make
+- make
    
 ### 3. Run
-   ./audio_editor
+
+- This project is implemented as a backend library and does not include a standalone executable.
+- It provides a set of functions for manipulating shared audio segments (e.g., insert, delete, split, merge). To test or use the system, you can create your own `main.c` file and call these functions to interact with the data structure.
+- This design reflects the modular nature of the project, allowing it to be integrated into larger audio processing applications or extended with a custom frontend.
+
+#### Example
+
+```c
+int main() {
+    // initialize track
+    // call insert/delete functions
+    // print or verify results
+}
+```
 
 ## Key Learnings
 
