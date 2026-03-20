@@ -1,7 +1,5 @@
 ## High-Performance Audio Editor
 
-> A memory-efficient audio editing backend in C designed to manipulate large audio tracks without redundant data copying.
-
 This project implements the backend of an audio editor in C, designed to efficiently manipulate large audio tracks through memory-safe and low-overhead operations. 
 
 At the core of the system is a custom data structure that allows multiple tracks to share references to the same underlying audio segments. Instead of duplicating audio data, segments are reused through pointer-based referencing, significantly reducing memory usage and improving performance when editing large files.
