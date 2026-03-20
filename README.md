@@ -32,8 +32,8 @@ This project demonstrates how careful memory management and data structure desig
 ## Getting Started
 
 ### 1. Clone the repository
-   git clone https://github.com/Juan-David-Lopez-Arce/high-performance-audio-editor.git
-   cd high-performance-audio-editor
+- git clone https://github.com/Juan-David-Lopez-Arce/high-performance-audio-editor.git
+- cd high-performance-audio-editor
 
 ### 2. Compile
    make
@@ -47,3 +47,9 @@ This project demonstrates how careful memory management and data structure desig
 - Designing zero-copy data structures
 - Trade-offs between performance and complexity
 - Efficient handling of large datasets
+
+## Challenges
+
+- Designing a data structure that avoids copying large audio segments
+- Managing memory safely in C without leaks or fragmentation
+- Ensuring correctness when multiple tracks share segment references
