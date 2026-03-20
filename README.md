@@ -6,7 +6,9 @@ At the core of the system is a custom data structure that allows multiple tracks
 
 ## Why This Project Matters
 
-Audio processing systems often deal with large datasets where naive copying leads to significant performance and memory issues.
+Naive audio editing systems duplicate data on every modification, leading to significant memory overhead and poor scalability.
+
+This project explores how low-level systems design eliminates unnecessary copying by using shared segment references, enabling efficient manipulation of large audio datasets.
 
 This project demonstrates how careful memory management and data structure design in C can:
 - Reduce memory overhead
