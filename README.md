@@ -1,6 +1,6 @@
 ## High-Performance Audio Editor
 
-This project implements the backend of an audio editor in C, designed to efficiently manipulate large audio tracks through memory-safe and low-overhead operations. 
+A high-performance audio editor backend in C focused on memory efficiency, enabling zero-copy manipulation of large audio tracks through shared segment references.
 
 At the core of the system is a custom data structure that allows multiple tracks to share references to the same underlying audio segments. Instead of duplicating audio data, segments are reused through pointer-based referencing, significantly reducing memory usage and improving performance when editing large files.
 
@@ -15,17 +15,23 @@ This project demonstrates how careful memory management and data structure desig
 
 ## Features
 
-- Efficient manipulation of audio samples using custom memory-managed structures
+- Efficient manipulation of audio samples
 - Support for dynamic track operations (insert, delete, split, merge)
-- Zero-copy segment reuse to minimize memory usage
 - Modular backend design for integration with audio processing systems
+
+## Design Decisions
+
+- **Zero-copy architecture:** Instead of duplicating audio data, tracks share references to segments, significantly reducing memory usage for large files.
+- **Linked segment structure:** Chosen over contiguous arrays to support efficient insertions, deletions, and splits without shifting large blocks of memory, reducing the time complexity of such operations.
+- **Memory vs complexity trade-off:** Prioritised memory efficiency and scalability at the cost of increased structural complexity.
+- **Manual memory management:** Carefully handled heap allocation and deallocation to avoid leaks and fragmentation in a shared-reference system.
 
 ## Architecture
 
-- Audio data is stored as segments in a linked structure
-- Tracks reference segments instead of owning copies
-- Editing operations update references rather than duplicating data
-- Heap allocation is carefully managed to minimize fragmentation
+- Audio is represented as a linked sequence of segments, each pointing to a shared buffer
+- Tracks maintain references to segments rather than owning raw data
+- Editing operations (insert, split, merge) modify segment links instead of copying memory
+- Reference sharing enables multiple tracks to reuse the same audio data safely
 
 ## Getting Started
 
